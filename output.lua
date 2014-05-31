@@ -1,4 +1,4 @@
-local TEXT = "aa"
+local TEXT = ""
 
 local function handler (evt)
 	local socket = require "socket"
