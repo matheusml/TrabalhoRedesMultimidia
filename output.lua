@@ -3,8 +3,8 @@ local TEXT = "aa"
 local function handler (evt)
 	local socket = require "socket"
 	while true do
-		local client = socket.connect('warm-harbor-2019.herokuapp.com',80)
-		client:send("GET /get_tweets.json HTTP/1.0\r\nHost: warm-harbor-2019.herokuapp.com\r\n\r\n")
+		local client = socket.connect('oleuff.herokuapp.com',80)
+		client:send("GET /get_tweets.json HTTP/1.0\r\nHost: oleuff.herokuapp.com\r\n\r\n")
 		local s, status, partial = client:receive(1024)
 		TEXT = string.gsub(partial, "HTTP(.*)Connection: Close(%s+)", "")
 		socket.select(nil, nil, 5)
